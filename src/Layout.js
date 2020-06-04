@@ -30,7 +30,6 @@ export default class Layout extends Component {
                open={this.state.showSideDrawer}
                closed={this.sideDrawerClosedHandler} />
             <main className={style.Content}>
-               this.props.children
                   {this.props.children}
             </main>
          </Aux>
