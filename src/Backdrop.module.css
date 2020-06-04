@@ -8,7 +8,6 @@
    background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 @media (min-width: 500px) {
    .Backdrop {
        display: none;

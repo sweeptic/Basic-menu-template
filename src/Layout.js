@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Aux from './_Aux';
 import Toolbar from './Toolbar';
 import SideDrawer from './SideDrawer';
+import style from './Layout.module.css';
 
 
 export default class Layout extends Component {
@@ -10,7 +11,6 @@ export default class Layout extends Component {
    }
 
    sideDrawerClosedHandler = () => {
-      // console.log('closed');
       this.setState({
          showSideDrawer: false
       })
@@ -18,7 +18,6 @@ export default class Layout extends Component {
 
    sideDrawerToggleHandler = () => {
       this.setState((prevState) => {
-         // console.log('open')
          return { showSideDrawer: !prevState.showSideDrawer };
       });
    }
@@ -30,10 +29,11 @@ export default class Layout extends Component {
             <SideDrawer
                open={this.state.showSideDrawer}
                closed={this.sideDrawerClosedHandler} />
-
+            <main className={style.Content}>
+               this.props.children
+                  {this.props.children}
+            </main>
          </Aux>
       )
    }
 }
-
-

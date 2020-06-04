@@ -2,12 +2,13 @@ import style from './SideDrawer.module.css';
 import React from 'react'
 import Aux from './_Aux';
 import Backdrop from './BackDrop';
-
+import NavigationItems from './NavigationItems';
+import Logo from './Logo';
 
 const SideDrawer = (props) => {
    let attachedClasses = [style.SideDrawer, style.Close];
-   if(props.open) {
-      attachedClasses =  [style.SideDrawer, style.Open];
+   if (props.open) {
+      attachedClasses = [style.SideDrawer, style.Open];
    }
 
    return (
@@ -16,8 +17,13 @@ const SideDrawer = (props) => {
 
          <div className={attachedClasses.join(' ')}>
 
+            <div className={style.Logo}>
+               <Logo />
+            </div>
 
-            navcontent
+            <nav>
+               <NavigationItems />
+            </nav>
 
          </div>
 
@@ -26,4 +32,3 @@ const SideDrawer = (props) => {
 }
 
 export default SideDrawer
-
