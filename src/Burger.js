@@ -4,20 +4,17 @@ import style from './Burger.module.css';
 
 
 
-
 const Burger = (props) => {
 
    let transformedIngredients = Object.keys(props.ingredients)
-   .map(igKey => {
-      return [...Array( props.ingredients[igKey])].map((_,i) => {
-         return <BurgerIngredient key={igKey + i} type={igKey} />
+      .map(igKey => {
+         return [...Array(props.ingredients[igKey])].map((_, i) => {
+            return <BurgerIngredient key={igKey + i} type={igKey} />
+         })
       })
-   })
-   .reduce((arr, el) => {
-      return arr.concat(el)
-   },[]);
-
-   console.log(transformedIngredients)
+      .reduce((arr, el) => {
+         return arr.concat(el)
+      }, []);
 
 
 

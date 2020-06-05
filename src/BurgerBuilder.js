@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Aux from './_Aux';
 import Burger from './Burger';
 import axios from './axios-orders';
+import BuildControls from './BuildControls';
 
 class BurgerBuilder extends Component {
 
@@ -22,6 +23,25 @@ class BurgerBuilder extends Component {
          })
    }
 
+   addIngredientHandler = (type) => {
+      const oldCount = this.state.ingredients[type];
+      const updatedCount = oldCount + 1;
+      const updatedIngredients = { ...this.state.ingredients };
+
+      updatedIngredients[type] = updatedCount;
+      this.setState({ ingredients: updatedIngredients })
+   }
+
+   removeIngredientHandler = (type) => {
+      const oldCount = this.state.ingredients[type];
+      const updatedCount = oldCount - 1;
+      const updatedIngredients = { ...this.state.ingredients };
+
+      updatedIngredients[type] = updatedCount;
+      this.setState({ ingredients: updatedIngredients })
+   }
+
+
 
    render() {
 
@@ -31,7 +51,10 @@ class BurgerBuilder extends Component {
          burger = (
             <Aux>
                <Burger ingredients={this.state.ingredients} />
-               {/* <BuildControls /> */}
+               <BuildControls
+                  ingredientAdded={this.addIngredientHandler}
+                  ingredientRemoved={this.removeIngredientHandler}
+               />
             </Aux>
          )
       }
