@@ -3,6 +3,7 @@ import './App.css';
 import Layout from './Layout';
 import BurgerBuilder from './BurgerBuilder';
 import { Switch, Route } from 'react-router-dom'
+import CheckOut from './CheckOut';
 
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
       <div>
         <Layout>
           <Switch>      
-            <Route path="/checkout" /*component={Checkout}*//>
+            <Route path="/checkout" component={CheckOut}/>
             <Route path="/orders" /*component={Orders}*//>
             <Route path="/" exact component={BurgerBuilder}/>
           </Switch>
