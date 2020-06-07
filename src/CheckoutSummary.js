@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import style from './CheckoutSummary.module.css';
 import Burger from './Burger';
 import Button from './Button';

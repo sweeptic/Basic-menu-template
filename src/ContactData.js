@@ -40,12 +40,9 @@ export default class ContactData extends Component {
          .catch(error => {
             this.setState({ loading: false });
          })
-
    }
 
-
    render() {
-
       let form = (
          <form>
             <input className={style.Input} type="text" name="name" placeholder="Your Name" />
