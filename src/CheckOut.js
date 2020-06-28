@@ -51,8 +51,7 @@ class CheckOut extends Component {
             //       price={this.state.totalPrice} {...props}/>)} 
 
             />
-
-
+            
          </div>
       )
    }
