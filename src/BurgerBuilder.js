@@ -9,7 +9,7 @@ import Modal from './Modal';
 import OrderSummary from './OrderSummary';
 import { connect } from 'react-redux';
 import withErrorHandler from './withErrorHandler';
-import * as actionTypes from './actions'
+import * as burgerBuilderActions from './Redux_actions_index'
 
 // const INGREDIENT_PRICES = {
 //    salad: 0.5,
@@ -157,8 +157,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
    return {
-      onIngredientAdded: (ingName) => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName: ingName }),
-      onIngredientRemoved: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
+      onIngredientAdded: (ingName) => dispatch(burgerBuilderActions.addIngredient(ingName)),
+      onIngredientRemoved: (ingName) => dispatch(burgerBuilderActions.removeIngredient(ingName))
+     
+     // onIngredientRemoved: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
    }
 }
 
