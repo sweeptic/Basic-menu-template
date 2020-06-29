@@ -41,10 +41,10 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             ingredients: {
-              salad: action.ingredients.salad,
-              bacon: action.ingredients.bacon,
-              cheese: action.ingredients.cheese,
-              meat: action.ingredients.meat,
+               salad: action.ingredients.salad,
+               bacon: action.ingredients.bacon,
+               cheese: action.ingredients.cheese,
+               meat: action.ingredients.meat,
             },
             error: false
          }
