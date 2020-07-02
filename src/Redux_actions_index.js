@@ -5,5 +5,5 @@ export {
 } from './Redux_actions_BurgerBuilder';
 
 export {
-   purchaseBurgerStart
+   purchaseBurger
 } from './Redux_actions_Order';
