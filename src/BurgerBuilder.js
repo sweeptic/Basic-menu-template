@@ -8,7 +8,7 @@ import Modal from './Modal';
 import OrderSummary from './OrderSummary';
 import { connect } from 'react-redux';
 import withErrorHandler from './withErrorHandler';
-import * as burgerBuilderActions from './Redux_actions_index'
+import * as actions from './Redux_actions_index'
 import axios from './axios-orders';
 
 // const INGREDIENT_PRICES = {
@@ -87,6 +87,7 @@ class BurgerBuilder extends Component {
       // }
       // queryParams.push('price=' + this.state.totalPrice);
       // const queryString = queryParams.join('&');
+      this.props.onInitPurchase();
       this.props.history.push({
          pathname: '/checkout'
          // ,search: '?' + queryString
@@ -152,10 +153,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
    return {
-      onIngredientAdded: (ingName) => dispatch(burgerBuilderActions.addIngredient(ingName)),
-      onIngredientRemoved: (ingName) => dispatch(burgerBuilderActions.removeIngredient(ingName)),
-      onInitIngredient: () => dispatch(burgerBuilderActions.initIngredients())
+      onIngredientAdded: (ingName) => dispatch(actions.addIngredient(ingName)),
+      onIngredientRemoved: (ingName) => dispatch(actions.removeIngredient(ingName)),
+      onInitIngredient: () => dispatch(actions.initIngredients()),
      // onIngredientRemoved: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
+     onInitPurchase: () =>  dispatch(actions.purchaseInit())
      
    }
 }
