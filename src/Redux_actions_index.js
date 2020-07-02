@@ -6,5 +6,6 @@ export {
 
 export {
    purchaseBurger,
-   purchaseInit
+   purchaseInit,
+   fetchOrders
 } from './Redux_actions_Order';
