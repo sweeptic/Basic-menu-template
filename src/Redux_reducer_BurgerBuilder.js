@@ -1,5 +1,6 @@
 import * as actionTypes from './Redux_actionTypes';
 
+
 const initialState = {
    ingredients: null,
    totalPrice: 4,
