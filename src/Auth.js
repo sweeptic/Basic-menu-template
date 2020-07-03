@@ -6,6 +6,8 @@ import style from './Auth.module.css';
 import * as actions from './Redux_actions_index'
 import { connect } from 'react-redux';
 
+
+
 class Auth extends Component {
 
    state = {
