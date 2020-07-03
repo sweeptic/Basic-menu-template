@@ -9,3 +9,7 @@ export {
    purchaseInit,
    fetchOrders
 } from './Redux_actions_Order';
+
+export {
+   auth
+} from './Redux_actions_Auth';
