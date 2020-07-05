@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Layout from './Layout';
 import BurgerBuilder from './BurgerBuilder';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import CheckOut from './CheckOut';
 import Orders from './Orders';
 import Auth from './Auth';
@@ -39,4 +39,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
