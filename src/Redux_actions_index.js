@@ -12,5 +12,6 @@ export {
 
 export {
    auth,
-   logout
+   logout,
+   setAuthRedirectPath
 } from './Redux_actions_Auth';
