@@ -11,5 +11,6 @@ export {
 } from './Redux_actions_Order';
 
 export {
-   auth
+   auth,
+   logout
 } from './Redux_actions_Auth';
