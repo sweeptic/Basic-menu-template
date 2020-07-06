@@ -6,7 +6,7 @@ import Button from './Button';
 class OrderSummary extends Component {
    render() {
 
-      // console.log(this.props.ingredients)
+     
       let ingredientSummary = Object.keys(this.props.ingredients)
          .map(igKey => {
             return (
