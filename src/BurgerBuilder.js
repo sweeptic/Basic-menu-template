@@ -11,7 +11,7 @@ import withErrorHandler from './withErrorHandler';
 import * as actions from './Redux_actions_index'
 import axios from './axios-orders';
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
 
    state = {
       purchasing: false,
