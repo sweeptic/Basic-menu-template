@@ -10,10 +10,11 @@ import burgerBuilderReducer from './Redux_reducer_BurgerBuilder';
 import thunk from 'redux-thunk';
 import orderReducer from './Redux_reducer_Order';
 import authReducer from './Redux_reducer_Auth';
+import createSagaMiddleware from 'redux-saga';
+import { logoutSaga } from './sagas_auth'
 
-
-const composeEnhancers = process.env.NODE_ENV === 
-'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+const composeEnhancers = process.env.NODE_ENV ===
+  'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const rootReducer = combineReducers({
   burgerBuilder: burgerBuilderReducer,
@@ -21,9 +22,13 @@ const rootReducer = combineReducers({
   auth: authReducer
 })
 
+const sagaMiddleWare = createSagaMiddleware();
+
 const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(thunk)
+  applyMiddleware(thunk, sagaMiddleWare)
 ));
+
+sagaMiddleWare.run(logoutSaga);
 
 const app = (
   <React.StrictMode>
