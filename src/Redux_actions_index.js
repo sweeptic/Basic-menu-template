@@ -15,5 +15,9 @@ export {
    logout,
    setAuthRedirectPath,
    authCheckState,
-   logoutSuccees
+   logoutSuccees,
+   authStart,
+   authSuccess,
+   authFail,
+   checkAuthTimeout
 } from './Redux_actions_Auth';
