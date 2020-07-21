@@ -1,7 +1,9 @@
 export {
    addIngredient,
    removeIngredient,
-   initIngredients
+   initIngredients,
+   setIngredients,
+   fetchIngredientsFailed
 } from './Redux_actions_BurgerBuilder';
 
 export {
