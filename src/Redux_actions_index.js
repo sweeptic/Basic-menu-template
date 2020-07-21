@@ -9,7 +9,13 @@ export {
 export {
    purchaseBurger,
    purchaseInit,
-   fetchOrders
+   purchaseBurgerSuccess,
+   purchaseBurgerFail,
+   fetchOrders,
+   purchaseBurgerStart,
+   fetchOrdersSuccess,
+   fetchOrdersStart,
+   fetchOrdersFail
 } from './Redux_actions_Order';
 
 export {
